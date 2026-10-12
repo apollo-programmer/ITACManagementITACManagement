@@ -59,6 +59,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     # user fields
     mobile_number = models.CharField(max_length=255, blank=True, null=True)
     email = models.CharField(max_length=255, null=True, blank=True, unique=True)
+    mssv = models.CharField(max_length=20, blank=True, null=True, verbose_name="Mã số sinh viên")
+    chuc_vu = models.CharField(max_length=100, blank=True, null=True, verbose_name="Chức vụ")
+    ngay_sinh = models.DateField(blank=True, null=True, verbose_name="Ngày sinh")
 
     # identity
     display_name = models.CharField(max_length=255, default="")
